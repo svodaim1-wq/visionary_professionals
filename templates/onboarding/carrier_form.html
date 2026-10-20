@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Carrier Onboarding — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Carrier Onboarding</h1>
+    <p>Join Visionary Professionals and start maximizing your earnings.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="step-tracker">
+            <div class="step active">Step 1: Fleet &amp; Owner Details</div>
+            <div class="step">Step 2: Equipment &amp; Capacity</div>
+            <div class="step">Step 3: SA Compliance</div>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="card" style="max-width:800px;margin:0 auto;">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2>Owner &amp; Fleet Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">{{ form.full_legal_name.label_tag }}{{ form.full_legal_name }}</div>
+                    <div class="form-group">{{ form.id_number.label_tag }}{{ form.id_number }}</div>
+                    <div class="form-group">{{ form.company_name.label_tag }}{{ form.company_name }}</div>
+                    <div class="form-group">{{ form.cipc_registration.label_tag }}{{ form.cipc_registration }}</div>
+                    <div class="form-group">{{ form.phone.label_tag }}{{ form.phone }}</div>
+                    <div class="form-group">{{ form.email.label_tag }}{{ form.email }}</div>
+                    <div class="form-group">{{ form.fleet_type.label_tag }}{{ form.fleet_type }}</div>
+                    <div class="form-group">{{ form.git_insurance.label_tag }}{{ form.git_insurance }}</div>
+                </div>
+
+                <h2 class="mt-3">SA Compliance Documents</h2>
+                <div class="form-grid">
+                    <div class="form-group">{{ form.has_prdp.label_tag }}{{ form.has_prdp }}</div>
+                    <div class="form-group">{{ form.cipc_document.label_tag }}{{ form.cipc_document }}</div>
+                    <div class="form-group">{{ form.git_document.label_tag }}{{ form.git_document }}</div>
+                    <div class="form-group">{{ form.prdp_document.label_tag }}{{ form.prdp_document }}</div>
+                    <div class="form-group">{{ form.banking_details.label_tag }}{{ form.banking_details }}</div>
+                </div>
+
+                <h2 class="mt-3">Rate Lock Guarantee</h2>
+                <div class="form-grid">
+                    <div class="form-group">{{ form.rate_lock_accepted.label_tag }}{{ form.rate_lock_accepted }}</div>
+                    <div class="form-group">{{ form.rate_lock_months.label_tag }}{{ form.rate_lock_months }}</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;">Submit Application</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Submit POD — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Submit Proof of Delivery</h1>
+    <p>Upload signed delivery documents for your completed loads.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <div class="card" style="max-width:600px;margin:0 auto;">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group"><label>Load Reference</label><input type="text" name="load_reference" placeholder="e.g., LOAD-2026-001" required></div>
+                <div class="form-group"><label>POD Document</label><input type="file" name="pod_document" accept=".pdf,.jpg,.jpeg,.png" required></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Submit POD</button>
+            </form>
+        </div>
+
+        <div class="card reveal mt-4" style="max-width:600px;margin:2rem auto 0;">
+            <h2>Payment Status Tracking</h2>
+            <ul>
+                <li><strong>Submitted</strong> — Document received</li>
+                <li><strong>Verified</strong> — Document verified by dispatch</li>
+                <li><strong>Payment Dispatched</strong> — Invoice sent to factoring</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

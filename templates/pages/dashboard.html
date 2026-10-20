@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Dispatch Dashboard</h1>
+    <p>Welcome to your Visionary Professionals dispatch dashboard.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card reveal"><div class="stat-number">0</div><div class="stat-label">Active Loads</div></div>
+            <div class="stat-card reveal"><div class="stat-number">R0</div><div class="stat-label">This Week Gross</div></div>
+            <div class="stat-card reveal"><div class="stat-number">0</div><div class="stat-label">Available Trucks</div></div>
+            <div class="stat-card reveal"><div class="stat-number">0</div><div class="stat-label">Pending Documents</div></div>
+        </div>
+
+        <div class="card reveal mt-4">
+            <h2>Recent Activity</h2>
+            <p style="color:var(--gray);">No recent activity. Contact your dispatcher to get started.</p>
+        </div>
+
+        <div class="card-grid mt-4">
+            <div class="card reveal"><div class="card-icon">📤</div><h3>Upload POD</h3><p>Submit signed delivery documents</p></div>
+            <div class="card reveal"><div class="card-icon">📄</div><h3>View Statements</h3><p>Access weekly driver statements</p></div>
+            <div class="card reveal"><div class="card-icon">💬</div><h3>Message Dispatcher</h3><p>Send a message to your dispatch team</p></div>
+            <div class="card reveal"><div class="card-icon">📋</div><h3>View Documents</h3><p>Access agreements and compliance docs</p></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

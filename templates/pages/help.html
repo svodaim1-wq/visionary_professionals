@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% block title %}Help &amp; Guide — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Help &amp; Guide</h1>
+    <p>Everything you need to get started and make the most of Visionary Professionals dispatch services.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="help-search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="search" placeholder="Search help topics, e.g. 'onboarding', 'GIT insurance', 'rates'..." id="helpSearchInput">
+        </div>
+
+        <div class="card-grid" id="helpCategories">
+            <a href="#getting-started" class="help-category reveal">
+                <div class="icon">🚀</div>
+                <h3>Getting Started</h3>
+                <p>How to onboard, required documents, and your first dispatch.</p>
+            </a>
+            <a href="#services" class="help-category reveal">
+                <div class="icon">📦</div>
+                <h3>Services Explained</h3>
+                <p>Load booking, broker checks, invoicing, and back-office support.</p>
+            </a>
+            <a href="#rates" class="help-category reveal">
+                <div class="icon">💰</div>
+                <h3>Rates &amp; Fees</h3>
+                <p>Percentage vs weekly rates, corridor benchmarks, and rate lock.</p>
+            </a>
+            <a href="#compliance" class="help-category reveal">
+                <div class="icon">🛡</div>
+                <h3>SA Compliance</h3>
+                <p>CIPC, PrDP, GIT insurance, and vehicle registration requirements.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="getting-started" style="background:var(--light);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">Getting Started</span>
+            <h2>Your Onboarding Journey</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card reveal">
+                <div class="card-icon">1</div>
+                <h3>Submit Application</h3>
+                <p>Complete the carrier onboarding form with your details and compliance documents.</p>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon">2</div>
+                <h3>Get Matched</h3>
+                <p>A dispatch specialist contacts you within 24 hours to finalize your agreement.</p>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon">3</div>
+                <h3>Start Earning</h3>
+                <p>We begin booking loads, negotiating rates, and handling your paperwork.</p>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="/onboarding/carrier/" class="btn btn-primary">Start Onboarding</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">Services</span>
+            <h2>What We Handle For You</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card reveal"><div class="card-icon">📞</div><h3>Load Booking &amp; Rate Negotiation</h3><p>We search load boards and direct brokers to find the highest-paying lanes across SA corridors.</p></div>
+            <div class="card reveal"><div class="card-icon">✓</div><h3>Broker Credit Checks</h3><p>Every broker is vetted for creditworthiness, safety ratings, and reviews before we book.</p></div>
+            <div class="card reveal"><div class="card-icon">📋</div><h3>Paperwork &amp; Rate Confirmation</h3><p>Setup packets, rate confirmations, and dispatch agreements handled promptly and accurately.</p></div>
+            <div class="card reveal"><div class="card-icon">⚡</div><h3>Invoicing &amp; Factoring</h3><p>We submit paperwork to your factoring company or brokers immediately for fast payment.</p></div>
+            <div class="card reveal"><div class="card-icon">🛣</div><h3>Route Planning</h3><p>Weather checks, deadhead minimization, and proactive communication with shippers.</p></div>
+            <div class="card reveal"><div class="card-icon">📄</div><h3>Driver Statements</h3><p>Weekly statements showing loads, rates, fees, and net earnings.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="rates" style="background:var(--light);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">Rates</span>
+            <h2>Simple &amp; Transparent Pricing</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card reveal">
+                <h3>Option A: Percentage-Based</h3>
+                <p><strong>5% - 8% Per Load</strong></p>
+                <p>Pay only when you book a load through us. Rate adjusts to your preferred commission.</p>
+            </div>
+            <div class="card reveal">
+                <h3>Option B: Flat Weekly Rate</h3>
+                <p><strong>R1,500 - R2,500 / Week</strong></p>
+                <p>Unlimited load bookings and complete back-office support for a predictable weekly rate.</p>
+            </div>
+            <div class="card reveal">
+                <h3>Rate Lock Guarantee</h3>
+                <p><strong>12 Months</strong></p>
+                <p>Your agreed dispatch rate is guaranteed for 12 months as long as your agreement is valid.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="compliance">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">Compliance</span>
+            <h2>SA Compliance Requirements</h2>
+        </div>
+        <div class="with-sidebar">
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <a href="#getting-started">Getting Started</a>
+                    <a href="#services">Services</a>
+                    <a href="#rates">Rates &amp; Fees</a>
+                    <a href="#compliance" class="active">Compliance</a>
+                </nav>
+            </aside>
+            <div>
+                <div class="card-grid">
+                    <div class="card reveal"><div class="card-icon">📜</div><h3>CIPC Registration</h3><p>Proof of company registration for LLCs and close corporations.</p></div>
+                    <div class="card reveal"><div class="card-icon">🧾</div><h3>Tax Clearance</h3><p>Valid SARS tax clearance certificate for your business.</p></div>
+                    <div class="card reveal"><div class="card-icon">🛡</div><h3>GIT Insurance</h3><p>Goods In Transit insurance document showing coverage amount.</p></div>
+                    <div class="card reveal"><div class="card-icon">🏦</div><h3>Banking Details</h3><p>Proof of bank account (cancelled cheque or bank letter).</p></div>
+                    <div class="card reveal"><div class="card-icon">🚛</div><h3>Driver's License &amp; PrDP</h3><p>Copy of valid driver's license and Professional Driving Permit.</p></div>
+                    <div class="card reveal"><div class="card-icon">📋</div><h3>Vehicle Registration</h3><p>Certificate of registration for each vehicle in your fleet.</p></div>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="/carrier-packet/" class="btn btn-outline">View Full Carrier Packet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background:var(--light);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">Glossary</span>
+            <h2>Dispatch Terms Explained</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <button class="faq-question">What is a dispatcher? <span class="toggle">+</span></button>
+                <div class="faq-answer"><p>A dispatcher is a professional who finds loads, negotiates rates, handles paperwork, and coordinates logistics so carriers can focus on driving.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">What is a rate confirmation? <span class="toggle">+</span></button>
+                <div class="faq-answer"><p>A rate confirmation is a legal agreement between the carrier and broker/shipper that confirms the agreed-upon rate and terms for a specific load.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">What is deadhead? <span class="toggle">+</span></button>
+                <div class="faq-answer"><p>Deadhead refers to miles driven without a paying load. Our route planning minimizes deadhead to maximize your earnings.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">What is a factoring company? <span class="toggle">+</span></button>
+                <div class="faq-answer"><p>A factoring company pays carriers immediately (minus a fee) for their invoices, so you don't have to wait 30-60 days for broker payment.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">What is PrDP? <span class="toggle">+</span></button>
+                <div class="faq-answer"><p>Professional Driving Permit is a South African requirement for drivers of vehicles used for reward (commercial) transport.</p></div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="/contact/" class="btn btn-primary">Still Have Questions? Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">Resources</span>
+            <h2>Videos &amp; Guides</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card reveal">
+                <div style="height:180px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:2.5rem;margin-bottom:1rem;">▶</div>
+                <h3>How Onboarding Works</h3>
+                <p>Watch a step-by-step walkthrough of the carrier onboarding process. (Coming soon)</p>
+            </div>
+            <div class="card reveal">
+                <div style="height:180px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:2.5rem;margin-bottom:1rem;">▶</div>
+                <h3>Submitting a POD</h3>
+                <p>Learn how to upload Proof of Delivery documents from your phone. (Coming soon)</p>
+            </div>
+            <div class="card reveal">
+                <div style="height:180px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:2.5rem;margin-bottom:1rem;">▶</div>
+                <h3>Understanding Your Rate Confirmation</h3>
+                <p>A guide to reading and verifying your rate confirmations. (Coming soon)</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

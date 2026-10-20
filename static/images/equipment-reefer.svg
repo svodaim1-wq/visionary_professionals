@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#0F2C59"/>
+  <rect x="40" y="140" width="240" height="80" rx="8" fill="#e9eef5"/>
+  <rect x="280" y="155" width="80" height="65" rx="6" fill="#1a3f73"/>
+  <rect x="60" y="155" width="200" height="6" rx="3" fill="#F89B29"/>
+  <g stroke="#0F2C59" stroke-width="2" opacity="0.4"><line x1="60" y1="180" x2="280" y2="180"/><line x1="60" y1="195" x2="280" y2="195"/><line x1="60" y1="210" x2="280" y2="210"/></g>
+  <circle cx="100" cy="240" r="20" fill="#111"/><circle cx="160" cy="240" r="20" fill="#111"/><circle cx="290" cy="240" r="20" fill="#111"/>
+  <text x="200" y="285" text-anchor="middle" fill="#F89B29" font-family="system-ui,sans-serif" font-size="16" font-weight="700">REEFER / COLD CHAIN</text>
+</svg>

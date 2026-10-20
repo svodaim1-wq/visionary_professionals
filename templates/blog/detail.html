@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <span class="category-tag">{{ post.get_category_display }}</span>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.excerpt }}</p>
+</section>
+
+<section class="section">
+    <div class="container" style="max-width:800px;">
+        <div class="blog-card-meta mb-3">
+            <span>By {{ post.author }}</span>
+            <span>{{ post.published_at|date:"d M Y" }}</span>
+            <span>{{ post.reading_time }} min read</span>
+        </div>
+        <div class="card reveal visible" style="line-height:1.9;font-size:1.05rem;">
+            {{ post.content|linebreaks }}
+        </div>
+
+        <div class="mt-4">
+            <a href="{% url 'blog_list' %}" class="btn btn-outline">&larr; Back to Blog</a>
+            <a href="/onboarding/carrier/" class="btn btn-primary">Get Dispatched</a>
+        </div>
+
+        {% if related %}
+        <div class="section-header mt-4">
+            <span class="subtitle">Related</span>
+            <h2>You May Also Like</h2>
+        </div>
+        <div class="blog-grid">
+            {% for rel in related %}
+            <article class="blog-card reveal">
+                <a href="{{ rel.get_absolute_url }}" style="text-decoration:none;color:inherit;">
+                    <div class="blog-card-image">{% if rel.image %}<img src="{{ rel.image.url }}" alt="{{ rel.title }}" style="width:100%;height:100%;object-fit:cover;">{% else %}Blog{% endif %}</div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta"><span>{{ rel.published_at|date:"M Y" }}</span><span>{{ rel.reading_time }} min read</span></div>
+                        <h3>{{ rel.title }}</h3>
+                        <p>{{ rel.excerpt }}</p>
+                    </div>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

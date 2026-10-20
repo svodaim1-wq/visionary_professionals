@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Dispatch Services — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Dispatch Services</h1>
+    <p>Tailored dispatch solutions for owner-operators, small fleets, and growing carriers across South Africa.</p>
+</section>
+
+<section class="section" id="owner-operators">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">Service Tiers</span>
+            <h2>Dispatch for Owner-Operators</h2>
+            <p>Daily loads, dedicated dispatcher, and personalized support for single-truck operations.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card reveal"><div class="card-icon">📞</div><h3>Dedicated Dispatcher</h3><p>A single point of contact who knows your truck, your lanes, and your preferences.</p></div>
+            <div class="card reveal"><div class="card-icon">📦</div><h3>Daily Load Booking</h3><p>We actively search for the best-paying loads every day so you never sit idle.</p></div>
+            <div class="card reveal"><div class="card-icon">💰</div><h3>Rate Negotiation</h3><p>We negotiate aggressively on your behalf to beat market averages.</p></div>
+            <div class="card reveal"><div class="card-icon">📋</div><h3>Paperwork Handling</h3><p>Rate confirmations, agreements, and compliance documents — all handled for you.</p></div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="/onboarding/carrier/" class="btn btn-primary">Get Started as Owner-Operator</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="small-fleets" style="background:var(--light);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">Service Tiers</span>
+            <h2>Dispatch for Small Fleets</h2>
+            <p>Multi-truck coordination, volume rates, and fleet-wide optimization.</p>
+        </div>
+        <div class="card-grid">
+            <div class="card reveal"><div class="card-icon">🚛</div><h3>Fleet Coordination</h3><p>We coordinate multiple trucks across different lanes for maximum utilization.</p></div>
+            <div class="card reveal"><div class="card-icon">📈</div><h3>Volume Rate Discounts</h3><p>Higher volume means better-negotiated rates with brokers and shippers.</p></div>
+            <div class="card reveal"><div class="card-icon">👥</div><h3>Driver Management</h3><p>Assign loads, track performance, and manage driver statements.</p></div>
+            <div class="card reveal"><div class="card-icon">🛡</div><h3>Compliance Support</h3><p>Full CIPC, GIT, PrDP, and vehicle registration management for your fleet.</p></div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="/onboarding/carrier/" class="btn btn-primary">Get Started with Your Fleet</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="subtitle">All Services Include</span>
+            <h2>Comprehensive Back-Office Support</h2>
+        </div>
+        <table class="comparison-table reveal">
+            <thead><tr><th>Service</th><th>Owner-Operators</th><th>Small Fleets</th><th>Large Fleets</th></tr></thead>
+            <tbody>
+                <tr><td>Load Booking &amp; Rate Negotiation</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Broker Credit Checks</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Paperwork &amp; Rate Confirmation</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Invoicing &amp; Factoring Support</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Route Planning &amp; Communication</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Driver Statements</td><td>—</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Fleet Coordination</td><td>—</td><td>✓</td><td>✓</td></tr>
+                <tr><td>After-Hours Dispatch</td><td>Add-on</td><td>✓</td><td>✓</td></tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <a href="/pricing/" class="btn btn-outline">View Pricing</a>
+            <a href="/solutions/" class="btn btn-outline">Beyond Dispatch Services</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

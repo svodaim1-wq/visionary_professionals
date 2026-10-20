@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Schedule a Call — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Schedule a Call</h1>
+    <p>Book a free consultation with one of our dispatch specialists.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="card reveal" style="max-width:700px;margin:0 auto;">
+            <form method="post" action="/contact/specialist/">
+                {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                <div class="form-grid">
+                    <div class="form-group"><label>Your Name</label><input type="text" name="name" required></div>
+                    <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+                    <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" required></div>
+                    <div class="form-group"><label>Preferred Call Time</label>
+                        <select name="time_in_business"><option>Morning (8am - 12pm)</option><option>Afternoon (12pm - 5pm)</option><option>Evening (5pm - 8pm)</option></select>
+                    </div>
+                    <div class="form-group"><label>Type of Equipment</label>
+                        <select name="equipment_type"><option>Superlink (34T)</option><option>Tri-Axle (28T)</option><option>10-Ton Rigid</option><option>8-Ton Flatbed</option><option>Reefer</option></select>
+                    </div>
+                    <div class="form-group"><label>Number of Trucks</label>
+                        <select name="num_trucks"><option>1 truck</option><option>2-3 trucks</option><option>4-6 trucks</option><option>7+ trucks</option></select>
+                    </div>
+                </div>
+                <div class="form-group full-width mt-2"><label>Additional Message</label><textarea name="message" rows="3" placeholder="Tell us about your operation..."></textarea></div>
+                <button type="submit" class="btn btn-primary">Schedule Call</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

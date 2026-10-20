@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0F2C59"/>
+  <rect x="0" y="300" width="800" height="100" fill="#091a36"/>
+  <g fill="#1a3f73">
+    <rect x="60" y="120" width="120" height="180" rx="8"/>
+    <rect x="220" y="100" width="120" height="200" rx="8"/>
+    <rect x="380" y="130" width="120" height="170" rx="8"/>
+    <rect x="540" y="110" width="120" height="190" rx="8"/>
+    <rect x="690" y="140" width="80" height="160" rx="8"/>
+  </g>
+  <g fill="#F89B29">
+    <circle cx="120" cy="180" r="35"/>
+    <circle cx="280" cy="160" r="40"/>
+    <circle cx="440" cy="190" r="32"/>
+    <circle cx="600" cy="170" r="38"/>
+  </g>
+  <text x="400" y="60" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="28" font-weight="800">Our Dispatch Team</text>
+  <text x="400" y="90" text-anchor="middle" fill="#F89B29" font-family="system-ui,sans-serif" font-size="15">Experts behind every load</text>
+</svg>

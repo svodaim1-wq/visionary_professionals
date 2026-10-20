@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#0F2C59"/>
+  <rect x="100" y="140" width="150" height="70" rx="8" fill="#1a3f73"/>
+  <rect x="250" y="155" width="60" height="55" rx="6" fill="#1a3f73"/>
+  <rect x="120" y="155" width="110" height="6" rx="3" fill="#F89B29"/>
+  <rect x="100" y="210" width="210" height="8" rx="3" fill="#F89B29" opacity="0.6"/>
+  <circle cx="140" cy="235" r="20" fill="#111"/><circle cx="260" cy="235" r="20" fill="#111"/>
+  <text x="200" y="285" text-anchor="middle" fill="#F89B29" font-family="system-ui,sans-serif" font-size="16" font-weight="700">BAKKIE COURIER</text>
+</svg>

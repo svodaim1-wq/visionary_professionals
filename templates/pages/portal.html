@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Carrier Portal — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Carrier Portal</h1>
+    <p>Welcome to your Visionary Professionals carrier portal.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="card-grid">
+            <a href="/portal/dashboard/" class="card reveal" style="text-decoration:none;">
+                <div class="card-icon">📊</div>
+                <h3>Dispatch Dashboard</h3>
+                <p>View active loads, upcoming bookings, and dispatcher notes.</p>
+            </a>
+            <a href="/onboarding/pod/" class="card reveal" style="text-decoration:none;">
+                <div class="card-icon">📤</div>
+                <h3>Upload PODs</h3>
+                <p>Submit signed Proof of Delivery documents directly from your phone.</p>
+            </a>
+            <a href="/portal/settings/" class="card reveal" style="text-decoration:none;">
+                <div class="card-icon">⚙</div>
+                <h3>Account Settings</h3>
+                <p>Manage your profile, notifications, and preferences.</p>
+            </a>
+            <a href="/onboarding/carrier/" class="card reveal" style="text-decoration:none;">
+                <div class="card-icon">📋</div>
+                <h3>Documents</h3>
+                <p>Access rate confirmations, agreements, and compliance documents.</p>
+            </a>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/portal/login/" class="btn btn-primary">Login to Portal</a>
+            <a href="/onboarding/carrier/" class="btn btn-outline">New Carrier? Onboard Here</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

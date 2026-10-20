@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Search — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Search</h1>
+    <p>Find services, guides, and resources across Visionary Professionals.</p>
+</section>
+<section class="section">
+    <div class="container">
+        <form method="get" action="/search/" class="help-search" style="margin-bottom:2rem;">
+            <input type="search" name="q" value="{{ query }}" placeholder="Search..." autofocus>
+        </form>
+        {% if query %}
+            <p class="mb-2"><strong>{{ results|length }}</strong> result(s) for "{{ query }}"</p>
+            <div class="card-grid">
+                {% for result in results %}
+                    <a href="{{ result.url }}" class="card reveal visible" style="text-decoration:none;">
+                        <h3>{{ result.title }}</h3>
+                        <p>View page &rarr;</p>
+                    </a>
+                {% empty %}
+                    <p>No results found. Try a different search term or <a href="/contact/">contact us</a>.</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Enter a search term above to find pages, services, and guides.</p>
+        {% endif %}
+        <div class="mt-3">
+            <a href="/help/" class="btn btn-outline">Browse Help &amp; Guide</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

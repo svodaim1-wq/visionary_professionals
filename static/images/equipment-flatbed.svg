@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#0F2C59"/>
+  <rect x="40" y="160" width="240" height="30" rx="6" fill="#1a3f73"/>
+  <rect x="280" y="150" width="80" height="60" rx="6" fill="#1a3f73"/>
+  <rect x="60" y="168" width="200" height="4" rx="2" fill="#F89B29"/>
+  <g fill="#2a5183"><rect x="80" y="120" width="40" height="30" rx="4"/><rect x="130" y="110" width="40" height="40" rx="4"/><rect x="180" y="125" width="40" height="25" rx="4"/></g>
+  <circle cx="100" cy="235" r="18" fill="#111"/><circle cx="160" cy="235" r="18" fill="#111"/><circle cx="290" cy="235" r="18" fill="#111"/>
+  <text x="200" y="285" text-anchor="middle" fill="#F89B29" font-family="system-ui,sans-serif" font-size="16" font-weight="700">FLATBED / RIGID</text>
+</svg>

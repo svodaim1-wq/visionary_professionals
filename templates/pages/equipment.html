@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Fleet &amp; Equipment — Visionary Professionals{% endblock %}
+{% block content %}
+<section class="page-header">
+    <h1>Fleet &amp; Equipment We Dispatch</h1>
+    <p>Flexible dispatch services for every vehicle configuration across Southern Africa.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Equipment</button>
+            <button class="filter-btn" data-filter="tautliner">Tautliner / Superlink</button>
+            <button class="filter-btn" data-filter="tipper">Tipper / Dump</button>
+            <button class="filter-btn" data-filter="reefer">Reefer / Cold Chain</button>
+            <button class="filter-btn" data-filter="flatbed">Flatbed / Rigid</button>
+            <button class="filter-btn" data-filter="courier">Courier / Bakkie</button>
+        </div>
+
+        <div class="card-grid" id="equipmentGrid">
+            <div class="card reveal" data-category="tautliner">
+                <div class="card-icon">🚛</div>
+                <h3>Superlink / Tautliner (34T)</h3>
+                <p>General freight along the N3 corridor. Up to 34-ton payload capacity.</p>
+                <img src="/static/images/equipment-superlink.svg" alt="Superlink truck" style="width:100%;border-radius:8px;margin:1rem 0;">
+                <p><span class="category-tag">Est. Rate: R18 - R25/km</span></p>
+                <a href="/onboarding/carrier/" class="btn btn-outline" style="width:100%;margin-top:1rem;">Request This Vehicle Type</a>
+            </div>
+            <div class="card reveal" data-category="tautliner">
+                <div class="card-icon">🚚</div>
+                <h3>Tri-Axle (28T)</h3>
+                <p>Versatile freight across major corridors. Up to 28-ton payload.</p>
+                <img src="/static/images/equipment-triaxle.svg" alt="Tri-axle truck" style="width:100%;border-radius:8px;margin:1rem 0;">
+                <p><span class="category-tag">Est. Rate: R15 - R22/km</span></p>
+                <a href="/onboarding/carrier/" class="btn btn-outline" style="width:100%;margin-top:1rem;">Request This Vehicle Type</a>
+            </div>
+            <div class="card reveal" data-category="tipper">
+                <div class="card-icon">⛏</div>
+                <h3>Side Tipper / End Dump</h3>
+                <p>Coal, mining, and bulk corridors — Mpumalanga &amp; Limpopo.</p>
+                <img src="/static/images/placeholder.svg" alt="Tipper truck" style="width:100%;border-radius:8px;margin:1rem 0;">
+                <p><span class="category-tag">Est. Rate: R20 - R28/km</span></p>
+            </div>
+            <div class="card reveal" data-category="reefer">
+                <div class="card-icon">❄</div>
+                <h3>Reefer / Refrigerated</h3>
+                <p>Produce and cold-chain transport across all major routes.</p>
+                <img src="/static/images/equipment-reefer.svg" alt="Reefer truck" style="width:100%;border-radius:8px;margin:1rem 0;">
+                <p><span class="category-tag">Est. Rate: R22 - R30/km</span></p>
+                <a href="/onboarding/carrier/" class="btn btn-outline" style="width:100%;margin-top:1rem;">Request This Vehicle Type</a>
+            </div>
+            <div class="card reveal" data-category="flatbed">
+                <div class="card-icon">📐</div>
+                <h3>Flatbed / Tri-Axle (28T)</h3>
+                <p>Steel, construction materials, and container transport.</p>
+                <img src="/static/images/equipment-flatbed.svg" alt="Flatbed truck" style="width:100%;border-radius:8px;margin:1rem 0;">
+                <p><span class="category-tag">Est. Rate: R16 - R24/km</span></p>
+                <a href="/onboarding/carrier/" class="btn btn-outline" style="width:100%;margin-top:1rem;">Request This Vehicle Type</a>
+            </div>
+            <div class="card reveal" data-category="flatbed">
+                <div class="card-icon">🚐</div>
+                <h3>10-Ton Rigid Truck</h3>
+                <p>Regional distribution and last-mile delivery.</p>
+                <img src="/static/images/placeholder.svg" alt="Rigid truck" style="width:100%;border-radius:8px;margin:1rem 0;">
+                <p><span class="category-tag">Est. Rate: R8 - R12/km</span></p>
+            </div>
+            <div class="card reveal" data-category="flatbed">
+                <div class="card-icon">🚛</div>
+                <h3>8-Ton Flatbed / Dropside</h3>
+                <p>Medium loads, agricultural, and general cargo.</p>
+                <img src="/static/images/placeholder.svg" alt="Flatbed dropside" style="width:100%;border-radius:8px;margin:1rem 0;">
+                <p><span class="category-tag">Est. Rate: R7 - R10/km</span></p>
+            </div>
+            <div class="card reveal" data-category="courier">
+                <div class="card-icon">🚐</div>
+                <h3>1-Ton Bakkie Courier</h3>
+                <p>Urgent express deliveries and small parcel transport.</p>
+                <img src="/static/images/equipment-bakkie.svg" alt="Bakkie courier" style="width:100%;border-radius:8px;margin:1rem 0;">
+                <p><span class="category-tag">Est. Rate: R5 - R8/km</span></p>
+                <a href="/onboarding/carrier/" class="btn btn-outline" style="width:100%;margin-top:1rem;">Request This Vehicle Type</a>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/onboarding/carrier/" class="btn btn-primary">Onboard Your Vehicle</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
