@@ -1,59 +1,66 @@
-# Visionary Professionals — SA Freight Dispatch Website
+Visionary Professionals — SA Freight Dispatch Website
 
-A Django-based website for a South African freight dispatching company serving owner-operators and small fleets across major SA corridors.
+A Django-based website for a South African freight dispatching company serving owner-operators and small fleets across major South African freight corridors.
 
-## Tech Stack
-- **Backend:** Django 5 + Python 3.12
-- **Frontend:** HTML5, CSS3, Vanilla JavaScript
-- **Database:** SQLite (dev), PostgreSQL (prod via env vars)
-
-## Quick Start
-
-```powershell
-# 1. Create and activate virtual environment
+Tech Stack
+Backend: Django 5 and Python 3.12
+Frontend: HTML5, CSS3, Vanilla JavaScript
+Database: SQLite for development, PostgreSQL for production (via environment variables)
+Quick Start
+1. Create and activate a virtual environment
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 
-# 2. Install dependencies
+2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Set up environment
+3. Configure environment variables
 Copy-Item .env.example .env
 
-# 4. Run migrations
+
+Update .env with your local configuration and secret values.
+
+4. Run database migrations
 python manage.py migrate
 
-# 5. Create admin user
+5. Create an administrator account
 python manage.py createsuperuser
 
-# 6. Start dev server
+6. Start the development server
 python manage.py runserver
-```
 
-## Pages
-| Route | Description |
-|-------|-------------|
-| `/` | Home — hero, stats, services, testimonials, FAQ |
-| `/about/` | About us |
-| `/services/` | Dispatch service tiers |
-| `/solutions/` | Beyond-dispatch services |
-| `/equipment/` | Fleet & equipment types |
-| `/pricing/` | Rates (ZAR) + corridor calculator |
-| `/onboarding/carrier/` | Carrier onboarding form |
-| `/contact/` | Contact form |
-| `/portal/` | Carrier portal (stub) |
-| `/blog/` | Blog (stub) |
-| `/carrier-packet/` | Required compliance documents |
-| `/admin/` | Django admin |
 
-## Documentation
-All project docs are in the `docs/` folder:
-- `TERMINAL_COMMANDS.md` — VSCode terminal commands
-- `AI_RULES_GUIDELINES.md` — Rules for AI assistants
-- `MILESTONE_CHECKLIST.md` — Progress tracker
-- `DIRECTORY_STRUCTURE.md` — File/folder purposes
-- `functional_feature_ideas.md` — Feature roadmap
-- `ui_design_blueprint.md` — UI/UX specification
+Visit http://127.0.0.1:8000/ in your browser.
 
-## Environment Variables
-See `.env.example` for all available settings.
+Pages
+Route	Description
+/	Home page with hero, statistics, services, testimonials, and FAQ
+/about/	About us
+/services/	Dispatch service tiers
+/solutions/	Additional services
+/equipment/	Fleet and equipment types
+/pricing/	Rates in ZAR and corridor calculator
+/onboarding/carrier/	Carrier onboarding form
+/contact/	Contact form
+/portal/	Carrier portal
+/blog/	Blog
+/carrier-packet/	Required compliance documents
+/admin/	Django administration
+Documentation
+
+Project documentation is available in the docs/ directory:
+
+TERMINAL_COMMANDS.md — VS Code terminal commands
+AI_RULES_GUIDELINES.md — Guidelines for AI assistants
+MILESTONE_CHECKLIST.md — Project progress tracker
+DIRECTORY_STRUCTURE.md — File and folder purposes
+functional_feature_ideas.md — Feature roadmap
+ui_design_blueprint.md — UI/UX specification
+Environment Variables
+
+See .env.example for the available configuration options. Never commit your actual .env file or expose secret keys, passwords, or other credentials.
+
+Development Notes
+Apply database migrations before running the application.
+Keep dependencies documented in requirements.txt.
+Configure production settings, environment variables, and a production-ready database before deployment.
