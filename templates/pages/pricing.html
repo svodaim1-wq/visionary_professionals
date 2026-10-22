@@ -11,21 +11,21 @@
         <div class="pricing-grid">
             <div class="pricing-card reveal">
                 <h3>Percentage-Based</h3>
-                <div class="pricing-amount"><span class="currency">R</span>5% - 8%</div>
+                <div class="pricing-amount"><span class="currency">$</span>8% - 10%</div>
                 <p class="pricing-period">Per Load</p>
                 <ul class="pricing-features">
                     <li>Pay only when you book a load</li>
                     <li>Rate adjusts to your preference</li>
                     <li>No weekly commitment</li>
                     <li>Full dispatch service included</li>
-                    <li>All SA corridors covered</li>
+                    <li>All 48 contiguous states covered</li>
                 </ul>
                 <a href="/onboarding/carrier/" class="btn btn-outline" style="width:100%;">Choose Percentage</a>
             </div>
             <div class="pricing-card featured reveal">
                 <span class="popular-badge">Most Popular</span>
                 <h3>Flat Weekly Rate</h3>
-                <div class="pricing-amount"><span class="currency">R</span>1,500 - 2,500</div>
+                <div class="pricing-amount"><span class="currency">$</span>350 - 500</div>
                 <p class="pricing-period">Per Week, Per Truck</p>
                 <ul class="pricing-features">
                     <li>Unlimited load bookings</li>
@@ -46,19 +46,21 @@
             <span class="subtitle">Compare</span>
             <h2>Which Option Is Right For You?</h2>
         </div>
-        <table class="comparison-table reveal">
-            <thead><tr><th>Feature</th><th>Percentage-Based (5% - 8%)</th><th>Flat Weekly Rate (R1,500 - R2,500)</th></tr></thead>
-            <tbody>
-                <tr><td>Payment Model</td><td>Per load booked</td><td>Fixed weekly fee</td></tr>
-                <tr><td>Weekly Commitment</td><td>None</td><td>Yes</td></tr>
-                <tr><td>Load Bookings</td><td>Unlimited</td><td>Unlimited</td></tr>
-                <tr><td>Back-Office Support</td><td>✓</td><td>✓</td></tr>
-                <tr><td>Dedicated Dispatcher</td><td>✓</td><td>✓</td></tr>
-                <tr><td>Driver Statements</td><td>Add-on</td><td>Included</td></tr>
-                <tr><td>Rate Lock Guarantee</td><td>12 months</td><td>12 months</td></tr>
-                <tr><td>Best For</td><td>Variable load volume</td><td>Consistent weekly volume</td></tr>
-            </tbody>
-        </table>
+        <div class="table-scroll reveal">
+            <table class="comparison-table">
+                <thead><tr><th>Feature</th><th>Percentage-Based (8% - 10%)</th><th>Flat Weekly Rate ($350 - $500)</th></tr></thead>
+                <tbody>
+                    <tr><td>Payment Model</td><td>Per load booked</td><td>Fixed weekly fee</td></tr>
+                    <tr><td>Weekly Commitment</td><td>None</td><td>Yes</td></tr>
+                    <tr><td>Load Bookings</td><td>Unlimited</td><td>Unlimited</td></tr>
+                    <tr><td>Back-Office Support</td><td>✓</td><td>✓</td></tr>
+                    <tr><td>Dedicated Dispatcher</td><td>✓</td><td>✓</td></tr>
+                    <tr><td>Driver Statements</td><td>Add-on</td><td>Included</td></tr>
+                    <tr><td>Rate Lock Guarantee</td><td>12 months</td><td>12 months</td></tr>
+                    <tr><td>Best For</td><td>Variable load volume</td><td>Consistent weekly volume</td></tr>
+                </tbody>
+            </table>
+        </div>
         <div class="text-center mt-3">
             <a href="/schedule-call/" class="btn btn-primary">Compare with a Specialist</a>
         </div>
@@ -69,8 +71,8 @@
     <div class="container">
         <div class="section-header reveal">
             <span class="subtitle">Calculator</span>
-            <h2>Corridor Rate Calculator</h2>
-            <p>Estimate your potential earnings across major SA corridors.</p>
+            <h2>Lane Rate Calculator</h2>
+            <p>Estimate your potential earnings on major US freight lanes.</p>
         </div>
         <div class="card reveal" style="max-width:800px;margin:0 auto;">
             <div class="form-grid">
@@ -78,37 +80,39 @@
                     <label for="origin">Origin City</label>
                     <select id="origin">
                         <option value="">Select origin...</option>
-                        <option value="jhb">Johannesburg</option>
-                        <option value="durban">Durban</option>
-                        <option value="cpt">Cape Town</option>
-                        <option value="plk">Polokwane</option>
-                        <option value="nel">Nelspruit</option>
+                        <option value="chi">Chicago, IL</option>
+                        <option value="omaha">Omaha, NE</option>
+                        <option value="dallas">Dallas, TX</option>
+                        <option value="atl">Atlanta, GA</option>
+                        <option value="la">Los Angeles, CA</option>
+                        <option value="phx">Phoenix, AZ</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="destination">Destination City</label>
                     <select id="destination">
                         <option value="">Select destination...</option>
-                        <option value="jhb">Johannesburg</option>
-                        <option value="durban">Durban</option>
-                        <option value="cpt">Cape Town</option>
-                        <option value="plk">Polokwane</option>
-                        <option value="nel">Nelspruit</option>
+                        <option value="chi">Chicago, IL</option>
+                        <option value="omaha">Omaha, NE</option>
+                        <option value="dallas">Dallas, TX</option>
+                        <option value="atl">Atlanta, GA</option>
+                        <option value="la">Los Angeles, CA</option>
+                        <option value="phx">Phoenix, AZ</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="vehicle">Vehicle Type</label>
+                    <label for="vehicle">Equipment Type</label>
                     <select id="vehicle">
-                        <option value="">Select vehicle...</option>
-                        <option value="superlink">Superlink (34T)</option>
-                        <option value="triaxle">Tri-Axle (28T)</option>
-                        <option value="rigid10">10-Ton Rigid</option>
-                        <option value="flatbed8">8-Ton Flatbed</option>
+                        <option value="">Select equipment...</option>
+                        <option value="dryvan">53' Dry Van</option>
                         <option value="reefer">Reefer / Refrigerated</option>
+                        <option value="flatbed">Flatbed</option>
+                        <option value="stepdeck">Step Deck</option>
+                        <option value="boxtruck">Box Truck</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="distance">Distance (km)</label>
+                    <label for="distance">Distance (miles)</label>
                     <input type="number" id="distance" placeholder="Enter distance" min="0">
                 </div>
             </div>
@@ -126,7 +130,7 @@
         <div class="section-header reveal">
             <span class="subtitle">Talk to Us</span>
             <h2>Speak to a Dispatch Specialist</h2>
-            <p>Get a personalized quote based on your fleet, equipment, and preferred corridors.</p>
+            <p>Get a personalized quote based on your fleet, equipment, and preferred lanes.</p>
         </div>
         <div class="card reveal" style="max-width:700px;margin:0 auto;">
             <form method="post" action="/contact/specialist/">
@@ -144,7 +148,7 @@
                     <div class="form-group"><label>DOT Number</label><input type="text" name="dot_number"></div>
                     <div class="form-group"><label>Type of Equipment</label>
                         <select name="equipment_type">
-                            <option>Superlink (34T)</option><option>Tri-Axle (28T)</option><option>10-Ton Rigid</option><option>8-Ton Flatbed</option><option>Reefer</option>
+                            <option>53' Dry Van</option><option>Reefer</option><option>Flatbed</option><option>Step Deck</option><option>Box Truck</option><option>Power Only</option>
                         </select>
                     </div>
                     <div class="form-group"><label>Number of Trucks</label>

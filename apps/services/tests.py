@@ -10,12 +10,12 @@ class ServicesTest(TestCase):
         response = self.client.get(reverse("services_list"))
         self.assertEqual(response.status_code, 200)
 
-    def test_api_corridor_rate_valid(self):
+    def test_api_lane_rate_valid(self):
         response = self.client.get(reverse("api_corridor_rate"), {
-            "origin": "jhb",
-            "destination": "durban",
-            "vehicle": "superlink",
-            "distance": "600"
+            "origin": "chi",
+            "destination": "omaha",
+            "vehicle": "dryvan",
+            "distance": "800"
         })
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.content)
@@ -27,9 +27,9 @@ class ServicesTest(TestCase):
 
     def test_api_corridor_rate_invalid_corridor(self):
         response = self.client.get(reverse("api_corridor_rate"), {
-            "origin": "jhb",
-            "destination": "unknown",
-            "vehicle": "superlink",
+            "origin": "chi",
+            "destination": "nowhere",
+            "vehicle": "dryvan",
             "distance": "100"
         })
         self.assertEqual(response.status_code, 404)

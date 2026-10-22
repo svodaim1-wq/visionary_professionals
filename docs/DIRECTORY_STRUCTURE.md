@@ -15,7 +15,8 @@ Dispatcher/
 │   ├── pages/                 # Static pages (home, about, equipment, pricing)
 │   ├── onboarding/            # Carrier/driver intake form
 │   ├── services/              # Services listing logic
-│   └── contact/               # Contact form handling
+│   └── contact/              # Contact form handling
+│   ├── blog/                 # Blog posts (list, detail, seed command)
 ├── templates/
 │   ├── base.html              # Master layout (head, nav, footer)
 │   ├── includes/              # Reusable partials

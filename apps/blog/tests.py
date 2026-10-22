@@ -6,7 +6,7 @@ class BlogTest(TestCase):
     def setUp(self):
         self.client = Client()
         self.post = BlogPost.objects.create(
-            title="Top SA Corridors 2026",
+            title="Top US Lanes 2026",
             category="industry-news",
             excerpt="Best routes this year.",
             content="Full content here.",
@@ -22,4 +22,4 @@ class BlogTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_slug_auto_generated(self):
-        self.assertEqual(self.post.slug, "top-sa-corridors-2026")
+        self.assertEqual(self.post.slug, "top-us-lanes-2026")

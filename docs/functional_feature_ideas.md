@@ -1,48 +1,49 @@
 # Functional Ideas & Feature Roadmap
 
 ## 1. Core Platform Capabilities
-Inspired by **Route One Dispatch**, **Logity Dispatch**, and **EchoDrive** — adapted for the **South African dispatch ecosystem**.
+Inspired by **Route One Dispatch**, **Logity Dispatch**, and **EchoDrive** — adapted for the **American dispatch ecosystem**.
 
 ---
 
 ## 2. Dynamic Carrier Onboarding Engine
 
-### A. South Africa-Specific Field Validation
-*   **CIPC Registration Number:** Form validation for SA company registration.
-*   **Driver PrDP (Professional Driving Permit):** Checkbox confirmation and document upload field.
-*   **GIT (Goods In Transit) Insurance Amount:** Structured input (R350k / R500k / R1M cover).
-*   **Fleet Type Selector:** Superlink (34T), Tri-Axle (28T), 10-Ton Rigid, 8-Ton Flatbed, 1-Ton Bakkie.
+### A. US-Specific Field Validation
+*   **Active MC Authority:** Checkbox confirmation and authority letter upload.
+*   **MC & DOT Numbers:** Form validation for FMCSA operating authority.
+*   **Cargo Insurance Coverage:** Structured input ($100k / $250k / higher).
+*   **Equipment Type Selector:** 53' Dry Van, Reefer, Flatbed, Step Deck, Box Truck, Power Only.
 *   **Number of Trucks:** 1, 2-3, 4-6, 7-8, 9-14, 15+.
 *   **Time in Business:** 0-11 months, 12+ months.
 
 ### B. Dynamic Document Uploads
-*   CIPC Certificate / Tax Clearance
-*   GIT Insurance Policy Document
-*   Banking Details (Proof of Bank Account)
-*   Copy of Driver's License & PrDP
+*   Signed W-9 (EIN / Tax ID)
+*   Certificate of Insurance (COI) — cargo & liability
+*   Voided Check / Direct Deposit Form
+*   Copy of CDL & MC Authority Letter
 
 ---
 
-## 3. SA Freight Corridor & Rates Engine
+## 3. US Freight Lane & Rates Engine
 
-### A. Corridor Rate Calculator
+### A. Lane Rate Calculator
 Interactive widget on Pricing page:
-*   Origin/Destination city selectors (JHB, Durban, CPT, Polokwane, Nelspruit)
-*   Vehicle type selector
-*   Output: Estimated ZAR rate range + dispatch fee breakdown
+*   Origin/Destination city selectors (Chicago, Omaha, Dallas, Atlanta, Los Angeles, Phoenix)
+*   Equipment type selector
+*   Distance in miles
+*   Output: Estimated USD rate range ($/mile) + dispatch fee breakdown
 
-### B. Live Corridor Status Board
-Dynamic homepage banner showing high-demand corridors.
+### B. Live Lane Status Board
+Dynamic homepage banner showing high-demand lanes.
 
 ### C. Rate Lock Guarantee
-Adapted from Route One: guarantee dispatch rate for set period (e.g., 12 months SA).
+Adapted from Route One: guarantee dispatch rate for set period (e.g., 12 months US).
 
 ---
 
 ## 4. Operational Dispatch & Communication Tools
 
-### A. WhatsApp Business API / Click-to-Chat
-*   Pre-filled WhatsApp links: "Hi, I have a 34T Superlink available in JHB..."
+### A. SMS / Click-to-Text Communication
+*   Click-to-call/text links: "Call or text (413) 423-1495".
 *   Auto-notification to dispatch managers on new carrier registration.
 
 ### B. Dispatch Service Tiers (from Route One pattern)
@@ -105,9 +106,9 @@ Footer columns:
 | Feature Module | Priority | Target App | Status |
 | :--- | :--- | :--- | :--- |
 | Mobile-Responsive Carrier Form | High | `apps/onboarding/` | Done |
-| GIT & CIPC Field Additions | High | `apps/onboarding/` | Done |
-| WhatsApp Instant Dispatch Button | Medium | `templates/includes/` | Done |
-| Corridor Rate Calculator | Medium | `apps/services/` | Done |
+| W-9, COI & MC Authority Field Additions | High | `apps/onboarding/` | Done |
+| SMS Instant Dispatch Button | Medium | `templates/includes/` | Done |
+| Lane Rate Calculator (USD, $/mile) | Medium | `apps/services/` | Done |
 | Carrier Document File Uploads | Low | `apps/onboarding/` | Done |
 | Service Tiers (Owner/ Fleet) | Medium | `apps/pages/` | Planned |
 | FAQ Section | Medium | `apps/pages/` | Planned |

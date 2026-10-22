@@ -1,6 +1,6 @@
-Visionary Professionals — SA Freight Dispatch Website
+Visionary Professionals — US Freight Dispatch Website
 
-A Django-based website for a South African freight dispatching company serving owner-operators and small fleets across major South African freight corridors.
+A Django-based website for an American freight dispatching company serving owner-operators and small fleets across major US freight lanes.
 
 Tech Stack
 Backend: Django 5 and Python 3.12
@@ -39,7 +39,7 @@ Route	Description
 /services/	Dispatch service tiers
 /solutions/	Additional services
 /equipment/	Fleet and equipment types
-/pricing/	Rates in ZAR and corridor calculator
+/pricing/	Rates in USD and lane rate calculator
 /onboarding/carrier/	Carrier onboarding form
 /contact/	Contact form
 /portal/	Carrier portal

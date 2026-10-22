@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 
-CORRIDOR_RATES = {
-    "jhb-durban": {"superlink": [18, 25], "triaxle": [16, 22], "rigid10": [10, 14], "flatbed8": [9, 12], "reefer": [22, 30]},
-    "durban-jhb": {"superlink": [18, 25], "triaxle": [16, 22], "rigid10": [10, 14], "flatbed8": [9, 12], "reefer": [22, 30]},
-    "jhb-cpt": {"superlink": [15, 22], "triaxle": [14, 20], "rigid10": [9, 13], "flatbed8": [8, 11], "reefer": [20, 28]},
-    "cpt-jhb": {"superlink": [15, 22], "triaxle": [14, 20], "rigid10": [9, 13], "flatbed8": [8, 11], "reefer": [20, 28]},
-    "jhb-plk": {"superlink": [12, 18], "triaxle": [11, 16], "rigid10": [8, 11], "flatbed8": [7, 10], "reefer": [16, 22]},
-    "plk-jhb": {"superlink": [12, 18], "triaxle": [11, 16], "rigid10": [8, 11], "flatbed8": [7, 10], "reefer": [16, 22]},
-    "jhb-nel": {"superlink": [14, 20], "triaxle": [12, 18], "rigid10": [8, 12], "flatbed8": [7, 10], "reefer": [18, 24]},
-    "nel-jhb": {"superlink": [14, 20], "triaxle": [12, 18], "rigid10": [8, 12], "flatbed8": [7, 10], "reefer": [18, 24]},
+LANE_RATES = {
+    "chi-omaha": {"dryvan": [1.75, 2.35], "reefer": [2.05, 2.75], "boxtruck": [1.45, 1.95], "flatbed": [2.0, 2.6], "stepdeck": [2.1, 2.8]},
+    "omaha-chi": {"dryvan": [1.75, 2.35], "reefer": [2.05, 2.75], "boxtruck": [1.45, 1.95], "flatbed": [2.0, 2.6], "stepdeck": [2.1, 2.8]},
+    "dallas-atl": {"dryvan": [1.7, 2.3], "reefer": [2.1, 2.85], "boxtruck": [1.4, 1.9], "flatbed": [1.95, 2.55], "stepdeck": [2.05, 2.75]},
+    "atl-dallas": {"dryvan": [1.7, 2.3], "reefer": [2.1, 2.85], "boxtruck": [1.4, 1.9], "flatbed": [1.95, 2.55], "stepdeck": [2.05, 2.75]},
+    "la-phx": {"dryvan": [1.9, 2.5], "reefer": [2.2, 3.0], "boxtruck": [1.5, 2.0], "flatbed": [2.1, 2.7], "stepdeck": [2.2, 2.9]},
+    "phx-la": {"dryvan": [1.9, 2.5], "reefer": [2.2, 3.0], "boxtruck": [1.5, 2.0], "flatbed": [2.1, 2.7], "stepdeck": [2.2, 2.9]},
+    "chi-dallas": {"dryvan": [1.8, 2.4], "reefer": [2.15, 2.9], "boxtruck": [1.45, 1.95], "flatbed": [2.05, 2.65], "stepdeck": [2.15, 2.85]},
+    "dallas-chi": {"dryvan": [1.8, 2.4], "reefer": [2.15, 2.9], "boxtruck": [1.45, 1.95], "flatbed": [2.05, 2.65], "stepdeck": [2.15, 2.85]},
 }
 
 def services_list(request):
@@ -30,18 +30,18 @@ def api_corridor_rate(request):
         return JsonResponse({"error": "Invalid distance"}, status=400)
 
     key = f"{origin}-{destination}"
-    rates = CORRIDOR_RATES.get(key)
+    rates = LANE_RATES.get(key)
 
     if not rates or vehicle not in rates:
-        return JsonResponse({"error": "Corridor not found"}, status=404)
+        return JsonResponse({"error": "Lane not found"}, status=404)
 
-    min_r, max_r = rates[vehicle]
+    min_rate, max_rate = rates[vehicle]
     return JsonResponse({
         "origin": origin,
         "destination": destination,
         "vehicle": vehicle,
-        "distance_km": distance,
-        "rate_per_km": {"min": min_r, "max": max_r},
-        "total_estimate": {"min": round(min_r * distance, 2), "max": round(max_r * distance, 2)},
-        "dispatch_fee_percent": {"min": 5, "max": 8},
+        "distance_mi": distance,
+        "rate_per_mile": {"min": min_rate, "max": max_rate},
+        "total_estimate": {"min": round(min_rate * distance, 2), "max": round(max_rate * distance, 2)},
+        "dispatch_fee_percent": {"min": 8, "max": 10},
     })

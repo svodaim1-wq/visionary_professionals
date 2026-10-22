@@ -237,3 +237,33 @@ Status: Core overhaul implemented. Pending items are noted with (PENDING).
 - [ ] Security audit
 - [ ] Accessibility audit (WCAG 2.1 AA)
 - [ ] Performance audit (Lighthouse 90+)
+
+## Phase 16: US Localization (DONE)
+- [x] Rebrand from South African to American market (USD, miles, US lanes)
+- [x] US phone number everywhere: (413) 423-1495 (tel:+14134231495). WhatsApp links replaced with call/text (sms:) links
+- [x] TIME_ZONE set to America/New_York; email dispatch@visionaryprofessionals.com; office Springfield, MA
+- [x] US lane rates engine: I-80 Chicago-Omaha, I-20 Dallas-Atlanta, I-10 LA-Phoenix, I-55 Chicago-Dallas; $/mile; 8-10% dispatch fee; API fields renamed (distance_mi, rate_per_mile)
+- [x] Calculator: US cities, equipment types, miles, en-US/USD formatting in main.js
+- [x] Carrier model US compliance fields: ein, cargo_insurance, authority_active, w9_document, coi_document, authority_document (migrations 0005 + 0006)
+- [x] Carrier packet / help compliance docs: MC Authority, W-9, COI, CDL
+- [x] Home page: US hero copy, US lane chips + demand board, $8,000+ weekly gross stat (data-prefix added to counters)
+- [x] Equipment page: 53' Dry Van, Power Only, Reefer, Flatbed, Step Deck, Box Truck; SVG placeholders renamed (dryvan/stepdeck/boxtruck)
+- [x] Pricing: 8-10% per load or $350-$500/week; US cities in specialist form
+- [x] Blog reseeded with 5 US freight posts
+- [x] Search keywords, help, about, services, solutions, contact, schedule-call, blog pages all US-localized
+- [x] README.md, functional_feature_ideas.md, ui_design_blueprint.md updated for US market
+- [x] All 15 tests passing after localization
+
+## Phase 17: Navbar Polish & Mobile Optimization (DONE)
+- [x] Navbar redesigned: gradient background, underline active indicator, arrow-styled Services dropdown with hover bridge, focus-within support, polished CTA with glow
+- [x] Hamburger toggled into 3-line animated icon with aria-expanded; Escape closes drawer; drawer links auto-close drawer on click
+- [x] New responsive breakpoints: 1080px (search hides), 880px (links hide, hamburger shows), 768px, 480px, 400px
+- [x] Mobile drawer rebuilt: search bar at top, larger touch targets, active link highlight, CTA + call/text buttons pinned at bottom
+- [x] JS active-page highlighting for navbar + drawer links
+- [x] Comparison tables wrapped in .table-scroll for horizontal swipe on small screens
+- [x] Single-column card/blog/corridor grids at 480px; stacked hero buttons; smaller stats, pricing, testimonials
+- [x] Fixed old form-button margin rule (was shifting navbar search icon); FAQ answer max-height raised to 500px
+- [x] Dashboard stat R0 -> $0; search page gained its icon; announcement bar stacks on mobile
+- [x] Verified all 12 key routes return 200; 15/15 tests pass; CSS/JS brace balance checked
+- [x] Drawer upgraded to full navbar mirror: VP logo header, staggered slide-in links, expanded Services sub-menu, hamburger morphs to X, aria-hidden toggling
+- [x] Horizontal overflow fixed at 360px: brand text hidden below 880px, compact logo chip + CTA below 480px, flex-shrink 0 on hamburger toggle, redundant 400px navbar rules removed

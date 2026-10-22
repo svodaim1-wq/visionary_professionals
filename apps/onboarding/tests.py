@@ -13,15 +13,15 @@ class CarrierOnboardingTest(TestCase):
     def test_form_post(self):
         data = {
             "full_legal_name": "John Doe",
-            "id_number": "9001015001089",
             "company_name": "Doe Trucking LLC",
-            "cipc_registration": "2023/123456/07",
+            "ein": "12-3456789",
             "mc_number": "MC-123456",
-            "phone": "555-1234",
+            "dot_number": "1234567",
+            "phone": "(413) 555-1234",
             "email": "john@example.com",
-            "fleet_type": "Superlink (34T)",
-            "git_insurance": "R500,000",
-            "has_prdp": True,
+            "fleet_type": "53' Dry Van",
+            "cargo_insurance": "$100,000",
+            "authority_active": True,
             "rate_lock_accepted": True,
             "rate_lock_months": 12,
         }

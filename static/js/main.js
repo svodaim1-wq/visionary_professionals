@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    initActiveNav();
     initNavbar();
     initReveal();
     initFaq();
@@ -11,6 +12,16 @@ document.addEventListener('DOMContentLoaded', function () {
     initFormLoading();
     initHelpSearch();
 });
+
+function initActiveNav() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.navbar-links > a, .navbar-links .dropdown > a, .drawer-links a').forEach(function (link) {
+        const href = (link.getAttribute('href') || '').split('#')[0];
+        if (!href) return;
+        const isActive = href === '/' ? path === '/' : (path === href || path.startsWith(href.replace(/\/$/, '') + '/'));
+        if (isActive) link.classList.add('active');
+    });
+}
 
 function initEquipmentFilter() {
     const buttons = document.querySelectorAll('.filter-btn');
@@ -71,11 +82,31 @@ function initDrawer() {
     const overlay = document.getElementById('drawerOverlay');
     const close = document.getElementById('drawerClose');
     if (!toggle || !drawer) return;
-    const open = () => { drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
-    const shut = () => { drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; };
-    toggle.addEventListener('click', open);
+    const open = () => {
+        drawer.classList.add('open');
+        toggle.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        toggle.setAttribute('aria-expanded', 'true');
+        drawer.setAttribute('aria-hidden', 'false');
+    };
+    const shut = () => {
+        drawer.classList.remove('open');
+        toggle.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        toggle.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+    };
+    toggle.addEventListener('click', function () {
+        drawer.classList.contains('open') ? shut() : open();
+    });
     if (overlay) overlay.addEventListener('click', shut);
     if (close) close.addEventListener('click', shut);
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) shut();
+    });
+    drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', shut); });
 }
 
 function initReveal() {
@@ -129,13 +160,14 @@ function initCounters() {
             if (!entry.isIntersecting) return;
             const el = entry.target;
             const target = parseInt(el.getAttribute('data-count'), 10);
+            const prefix = el.getAttribute('data-prefix') || '';
             const suffix = el.getAttribute('data-suffix') || '';
             let current = 0;
             const step = Math.max(1, Math.ceil(target / 60));
             const timer = setInterval(function () {
                 current += step;
                 if (current >= target) { current = target; clearInterval(timer); }
-                el.textContent = current.toLocaleString() + suffix;
+                el.textContent = prefix + current.toLocaleString() + suffix;
             }, 20);
             obs.unobserve(el);
         });
@@ -176,16 +208,17 @@ async function calculateRate() {
         const data = await response.json();
 
         if (!response.ok) {
-            alert(data.error || 'Rate not available for this corridor yet. Contact dispatch for a quote.');
+            alert(data.error || 'Rate not available for this lane yet. Contact dispatch for a quote.');
             return;
         }
 
-        const minTotal = data.total_estimate.min.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-        const maxTotal = data.total_estimate.max.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-        const dispatchMin = (data.total_estimate.min * data.dispatch_fee_percent.min / 100).toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-        const dispatchMax = (data.total_estimate.max * data.dispatch_fee_percent.max / 100).toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-        const netMin = (data.total_estimate.min * 0.92).toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-        const netMax = (data.total_estimate.max * 0.95).toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
+        const usd = { locale: 'en-US', style: 'currency', currency: 'USD' };
+        const minTotal = data.total_estimate.min.toLocaleString('en-US', usd);
+        const maxTotal = data.total_estimate.max.toLocaleString('en-US', usd);
+        const dispatchMin = (data.total_estimate.min * data.dispatch_fee_percent.min / 100).toLocaleString('en-US', usd);
+        const dispatchMax = (data.total_estimate.max * data.dispatch_fee_percent.max / 100).toLocaleString('en-US', usd);
+        const netMin = (data.total_estimate.min * 0.92).toLocaleString('en-US', usd);
+        const netMax = (data.total_estimate.max * 0.90).toLocaleString('en-US', usd);
 
         resultText.innerHTML = '<strong>Estimated Gross Revenue:</strong> ' + minTotal + ' - ' + maxTotal + '<br>' +
             '<strong>Est. Dispatch Fee (' + data.dispatch_fee_percent.min + '% - ' + data.dispatch_fee_percent.max + '%):</strong> ' + dispatchMin + ' - ' + dispatchMax + '<br>' +

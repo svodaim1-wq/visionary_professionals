@@ -8,7 +8,8 @@
 <section class="section">
     <div class="container">
         <form method="get" action="/search/" class="help-search" style="margin-bottom:2rem;">
-            <input type="search" name="q" value="{{ query }}" placeholder="Search..." autofocus>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="search" name="q" value="{{ query }}" placeholder="Search..." aria-label="Search the site" autofocus>
         </form>
         {% if query %}
             <p class="mb-2"><strong>{{ results|length }}</strong> result(s) for "{{ query }}"</p>
